@@ -7,11 +7,10 @@ class Cibo extends Prodotto
     private $peso;
     private $scadenza;
 
-    public function __construct($gusto,$peso) {
-        parent::__construct('carne', 12.50, 'cane', 'pets');
+    public function __construct($nome, $prezzo, $animale, $marca, $gusto, $peso) {
+        parent::__construct($nome, $prezzo, $animale, $marca);
         $this->gusto = $gusto;
         $this->peso = $peso;
-
     }
     
     public function getGusto() {

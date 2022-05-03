@@ -9,16 +9,24 @@
     Alcuni prodotti (es. antipulci) avranno la caratteristica che saranno disponibili solo in un periodo particolare (es. da maggio ad agosto).
 */
 
-include __DIR__ . '/classes/cibo.php';
+// include __DIR__ . '/classes/cibo.php';
 include __DIR__ . '/classes/cliente.php';
+include __DIR__ . '/classes/farmaco.php';
 
 
-$prodotto1 = new Cibo('bastoncini di carne', 12.50, 'cane', 'pets', 'manzo', '15kg');
-$cliente1 = new Cliente('luca', 'lo bianco', '2022/04');
 
-// echo date_default_timezone_set('Europe/Rome');
-
-echo $cliente1->setVerificaScadenza('2022/07');
+// $prodotto1 = new Cibo('bastoncini di carne', 12.50, 'cane', 'pets', 'manzo', '15kg');
 
 // echo $prodotto1->getNome();
-// var_dump($prodotto1);
+
+
+$cliente1 = new Cliente('luca', 'lo bianco', '2022/04');
+
+
+// echo $cliente1->setVerificaScadenza($cliente1->getScadenzaCarta(), $cliente1->getNome(), $cliente1->getCognome());
+
+
+$antipulci = new Farmaco('antipulci', 10, 'cane', 'pulcix', 6, 8);
+
+echo $antipulci->Disponibilità($antipulci->getMeseInizio(), $antipulci->getMeseFine());
+

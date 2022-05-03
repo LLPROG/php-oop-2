@@ -26,6 +26,10 @@ class Prodotto
         return $this->prezzo;
     }
 
+    public function getDimensione() {
+        return $this->dimensione;
+    }
+
     public function getAnimale() {
         return $this->animale;
     }
@@ -34,9 +38,17 @@ class Prodotto
         return $this->marca;
     }
 
-    // public function setNome() {
-    //     return 
-    // }
+    public function getModello() {
+        return $this->modello;
+    }
+
+    public function getStock() {
+        return $this->getStock;
+    }
+
+    public function getInfo() {
+        return $this->info;
+    }
 }
 
 

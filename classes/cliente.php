@@ -8,7 +8,7 @@ class Cliente
     private $telefono;
     private $scadenzaCarta;
     private $sconto;
-    private $prodotto;
+    private $codiceProdotto;
 
     public function __construct($nome,$cognome,$scadenzaCarta) {
         $this->nome = $nome;
@@ -24,11 +24,31 @@ class Cliente
         return $this->cognome;
     }
 
-    public function setVerificaScadenza($scadenzaCarta) {
-        if ($scadenzaCarta <= Date("Y/m")) {
-            echo "puoi effettuare l'acquisto";
+    public function getIndirizzo() {
+        return $this->indirizzo;
+    }
+
+    public function getTelefono() {
+        return $this->telefono;
+    }
+
+    public function getCodiceProdottoe() {
+        return $this->codiceProdotto;
+    }
+
+    public function getSconto() {
+        return $this->sconto;
+    }
+
+    public function getScadenzaCarta() {
+        return $this->scadenzaCarta;
+    }
+
+    public function setVerificaScadenza($scadenzaCarta, $nome, $cognome) {
+        if ($scadenzaCarta < Date("Y/m")) {
+            echo $nome . " " . $cognome . " puoi effettuare l'acquisto";
         } else {
-            echo "la tua carta é scaduta";
+            echo $nome . " " . $cognome . " la tua carta é scaduta";
         }
     }
 
