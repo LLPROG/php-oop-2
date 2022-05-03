@@ -7,13 +7,17 @@ class Cliente
     private $indirizzo;
     private $telefono;
     private $scadenzaCarta;
-    private $sconto;
+    private $sconto = 20;
     private $codiceProdotto;
+    private $registrato;
 
-    public function __construct($nome,$cognome,$scadenzaCarta) {
+
+    public function __construct($nome,$cognome,$scadenzaCarta, $registrato) {
         $this->nome = $nome;
         $this->cognome = $cognome;
         $this->scadenzaCarta = $scadenzaCarta;
+        $this->registrato = $registrato;
+
     }
 
     public function getNome() {
@@ -36,12 +40,20 @@ class Cliente
         return $this->codiceProdotto;
     }
 
-    public function getSconto() {
-        return $this->sconto;
-    }
-
     public function getScadenzaCarta() {
         return $this->scadenzaCarta;
+    }
+
+    public function getRegistrato() {
+        return $this->registrato;
+    }
+
+    public function setSconto() {
+        if ($this->registrato == true) {
+            echo 'il tuo sconto é ' . ' ' . $this->sconto . ' ' . 'per cento';
+        } else {
+            echo 'per lo sconto registrati';
+        }
     }
 
     public function setVerificaScadenza($scadenzaCarta, $nome, $cognome) {

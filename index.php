@@ -20,13 +20,17 @@ include __DIR__ . '/classes/farmaco.php';
 // echo $prodotto1->getNome();
 
 
-$cliente1 = new Cliente('luca', 'lo bianco', '2022/04');
+$cliente1 = new Cliente('luca', 'lo bianco', '2022/04', false);
+
+echo $cliente1->setSconto();
+
+
 
 
 // echo $cliente1->setVerificaScadenza($cliente1->getScadenzaCarta(), $cliente1->getNome(), $cliente1->getCognome());
 
 
-$antipulci = new Farmaco('antipulci', 10, 'cane', 'pulcix', 6, 8);
+// $antipulci = new Farmaco('antipulci', 10, 'cane', 'pulcix', 6, 8);
 
-echo $antipulci->Disponibilità($antipulci->getMeseInizio(), $antipulci->getMeseFine());
+// echo $antipulci->Disponibilità($antipulci->getMeseInizio(), $antipulci->getMeseFine());
 
